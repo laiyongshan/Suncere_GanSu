@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+       >
+
+
+            <suncere.gansu.androidapp.customview.SegmentControl
+                android:id="@+id/warn_TimeRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12px"
+                android:textSize="38px"
+                app:backgroundColor="#4789DE"
+                app:colors="#66ffffff"
+                app:direction="horizon"
+                app:texts="突变警报|异常警报|超标警报"
+                app:cornerRadius="10px"
+                app:horizonGap="28px"
+                app:verticalGap="28px"
+                app:selectTextColor="@color/warn_color"
+                app:unselectTextColor="@color/warn_color"
+                android:layout_centerInParent="true"/>
+
+
+
+        <RelativeLayout
+            android:id="@+id/warn_title_refresh_rela"
+            android:layout_width="120px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/warn_title_refresh_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/refresh"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30px"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/warn_swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/warn_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               >
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/warn_emptyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/nothing_data" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="4dp"
+            android:text="暂无数据!"
+            android:textColor="#88E2E2E2"
+            android:textSize="18sp" />
+    </LinearLayout>
+</RelativeLayout>
+
+</LinearLayout>

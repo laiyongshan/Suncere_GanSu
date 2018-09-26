@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="suncere.gansu.androidapp.utils.ColorUtils"/>
+        <variable
+            name="homeAllCitiesBean"
+            type="suncere.gansu.androidapp.model.entity.HomeAllCitiesBean"/>
+    </data>
+
+
+<RelativeLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+   >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingTop="16dp"
+        android:paddingRight="12dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="空气质量指数/AQI"
+            android:layout_marginTop="6dp"
+            android:textSize="16sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="83dp"
+                android:text="@{homeAllCitiesBean.AQI}"
+                android:textColor="@{ColorUtils.getColorWithAQI(homeAllCitiesBean.AQI)}"
+                android:textSize="76sp"
+                android:gravity="top"
+                android:layout_marginBottom="0dp"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="22dp"
+                android:text="@{homeAllCitiesBean.quality}"
+                android:background="@{ColorUtils.getBgFromQualitys(homeAllCitiesBean.quality)}"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="26dp">
+
+
+                <LinearLayout
+                    android:id="@+id/home3_cityName_lin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <suncere.gansu.androidapp.customview.AlwaysMarqueeTextView
+                        android:id="@+id/home3_cityName_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{homeAllCitiesBean.cityName}"
+                        android:textSize="28sp"
+                        android:maxWidth="120dp"
+                        android:textColor="#fff"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        />
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/station_detail_rtv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/city_open"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="#fff"
+                        android:text="站点详情"
+                        android:lines="1"
+                        android:textSize="10sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginTop="6dp"
+                        rv:rv_strokeColor="#fff"
+                        rv:rv_strokeWidth="0.3dp"
+                        rv:rv_backgroundColor="#22fff9ec"
+                        rv:rv_cornerRadius="6dp"
+                        rv:rv_textPressColor="#00ffffff"
+                        />
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{ homeAllCitiesBean.timePoint == null ? @string/time: ColorUtils.getPutTime(@string/home_page_time,homeAllCitiesBean.timePoint )  }"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:layout_marginTop="20px"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/home_primaryPollutant+homeAllCitiesBean.primaryPollutant}"
+                    android:textSize="14sp"
+                    android:textColor="#fff"
+                    android:layout_marginTop="20px"
+
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        
+        <suncere.gansu.androidapp.customview.AlwaysMarqueeTextView
+            android:id="@+id/analy_lbHealth_0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@{homeAllCitiesBean.unheathful}"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:drawableLeft="@mipmap/bike"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/home_headth_bg"
+            />
+
+        <include layout="@layout/home_viewpage_itme_layout"
+            app:HomeAllCitiesitmeLayout="@{homeAllCitiesBean}"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+</layout>

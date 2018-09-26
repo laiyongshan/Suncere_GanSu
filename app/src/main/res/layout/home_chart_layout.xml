@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10px">
+
+        <TextView
+            android:id="@+id/home_chart24_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="过去24小时AQI指数"
+            android:layout_marginLeft="30px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="单位：μg/m³(CO:mg/m³)"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#fff"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        />
+
+    <suncere.gansu.androidapp.customview.kjchart.ChartView
+        android:id="@+id/home_chart24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="5px"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10px">
+
+        <TextView
+            android:id="@+id/home_chart30_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="过去30天AQI指数"
+            android:layout_marginLeft="30px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="单位：μg/m³(CO:mg/m³)"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#fff"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        />
+    <suncere.gansu.androidapp.customview.kjchart.ChartView
+        android:id="@+id/home_chart30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="5px"/>
+
+    <suncere.gansu.androidapp.customview.PollutantsView
+        android:id="@+id/home_PollutantsView"
+        android:layout_width="match_parent"
+        android:layout_height="82px"
+        android:background="#33666666"
+        android:paddingLeft="20px"
+        android:paddingRight="20px"
+        app:pollutantsTexts="AQI,SO2,NO2,O3,CO,PM10,PM2.5"
+        app:pollutantsCodes="99,100,101,102,103,104,105"
+        app:selectPollutantTextBackground="@drawable/pollutant_btn"
+        />
+</LinearLayout>

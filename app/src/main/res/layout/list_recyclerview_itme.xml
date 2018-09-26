@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="suncere.gansu.androidapp.utils.ColorUtils"/>
+        <variable
+            name="listbeanItme"
+            type="suncere.gansu.androidapp.model.entity.ListBean"/>
+    </data>
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@{listbeanItme.sortID }"
+        android:textColor="#fff"
+        android:textSize="52px"
+        />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{listbeanItme.cityName}"
+            android:textColor="#fff"
+            android:textSize="32px" /><!--listbeanItme.dataType.equals(@string/dataType) ? listbeanItme.stationName : listbeanItme.cityName-->
+
+        <suncere.gansu.androidapp.customview.PollutantNameTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@{listbeanItme.stationName}"
+            android:textColor="#fff"
+            android:textSize="32px"
+            android:visibility="@{ColorUtils.isCityOrStationCode(listbeanItme.dataType) ? View.GONE : View.VISIBLE}"
+            />
+     <!--   <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{listbeanItme.stationName}"
+            android:textColor="#fff"
+            android:textSize="32px"
+            android:visibility="@{ColorUtils.isCityOrStationCode(listbeanItme.dataType) ? View.GONE : View.VISIBLE}"
+            />-->
+        <!--listbeanItme.dataType.equals(@string/dataType) ? listbeanItme.stationName : listbeanItme.cityName-->
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/list_itme_value"
+                android:layout_width="100px"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@{ColorUtils.isZongHeZhiShu(listbeanItme.pollutantCode) ?ColorUtils.transparentDrawable() :  ColorUtils.getDrawableBgFromLevel(listbeanItme.level)}"
+                android:textColor="@{ColorUtils.isZongHeZhiShu(listbeanItme.pollutantCode) ? @color/color_while:@color/color_black}"
+                android:layout_centerInParent="true"
+                android:textSize="32px"
+                android:paddingTop="8px"
+                android:paddingBottom="8px"
+                />
+        </RelativeLayout>
+
+        <!--  android:background="@{ColorUtils.getBgFromLevel(listbeanItme.level)}" -->
+       <!-- <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{listbeanItme.PrimaryPollutant}"
+            android:textColor="#fff"
+            android:textSize="36px"
+            />-->
+        <suncere.gansu.androidapp.customview.PollutantNameTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@{ColorUtils.PollutantChiness2Eglish(listbeanItme.PrimaryPollutant)}"
+            android:textColor="#fff"
+            android:textSize="32px"
+            android:visibility="@{ColorUtils.isZongHeZhiShu(listbeanItme.pollutantCode) ? View.GONE:View.VISIBLE}"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#66ffffff"
+        android:layout_margin="12dp"
+        />
+
+</LinearLayout>
+
+</layout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="warnBean"
+            type="suncere.gansu.androidapp.model.entity.WarnBean"/>
+    </data>
+
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/warn_itme_bg"
+    android:paddingLeft="25px"
+    android:layout_marginLeft="25px"
+    android:paddingRight="40px"
+    android:layout_marginRight="25px"
+    android:layout_marginTop="40px">
+    
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{warnBean.stationName}"
+            android:textSize="38px"
+            android:textColor="#fff"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{warnBean.cityName}"
+            android:textSize="32px"
+            android:textColor="#fff"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10px"
+            android:paddingTop="6px"
+            android:paddingBottom="6px"
+            android:paddingLeft="10px"
+            android:background="@drawable/warn_itme_cityname_bg"
+            />
+    </RelativeLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{warnBean.execptionInfo}"
+        android:textColor="#fff"
+        android:textSize="32px"
+        android:layout_marginTop="30px"
+        android:layout_marginBottom="20px"/>
+
+</LinearLayout>
+</layout>

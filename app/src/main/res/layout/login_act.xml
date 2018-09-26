@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/login_bg"
+    >
+
+    <LinearLayout
+        android:id="@+id/login_bg"
+        android:layout_width="580px"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <LinearLayout
+            android:layout_width="580px"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_login_line_n">
+
+
+            <!--android:background="@drawable/bg_edittext" -->
+            <EditText
+                android:id="@+id/login_user"
+                android:layout_width="580px"
+                android:layout_height="90px"
+                android:background="@null"
+                android:hint="用户名"
+                android:padding="10px"
+                android:singleLine="true"
+                android:textColorHint="#AAAAAA"
+                android:textSize="34px"
+                android:drawableLeft="@mipmap/user_icon"
+                android:drawablePadding="10px"
+                android:paddingLeft="20px"
+                android:textColor="#fff"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#88ffffff"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="20px"/>
+
+
+            <!--   android:background="@drawable/bg_edittext" -->
+            <EditText
+                android:id="@+id/login_psw"
+                android:layout_width="580px"
+                android:layout_height="90px"
+                android:background="@null"
+                android:hint="密码"
+                android:padding="10px"
+                android:password="true"
+                android:singleLine="true"
+                android:textColorHint="#AAAAAA"
+                android:textSize="34px"
+                android:drawableLeft="@mipmap/password_icon"
+                android:drawablePadding="10px"
+                android:paddingLeft="20px"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingLeft="10px">-->
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/login_islogin"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12sp"-->
+                <!--android:text="自动登陆"-->
+                <!--/>-->
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/login_savepsw"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12sp"-->
+                <!--android:text="记住密码"-->
+                <!--/>-->
+      <!--  </LinearLayout>-->
+
+        <Button
+            android:id="@+id/login_go"
+            android:layout_width="580px"
+            android:layout_height="80px"
+            android:background="@drawable/bg_login_button"
+            android:text="登录"
+            android:textColor="#fff"
+            android:textSize="34px"
+            android:layout_marginTop="60px"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/login_progress_rela"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33666666"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone"
+        >
+
+        <LinearLayout
+            android:layout_width="300px"
+            android:layout_height="300px"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:background="@drawable/is_login_bg"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                >
+
+                <ProgressBar
+                    android:layout_width="60px"
+                    android:layout_height="60px"
+                    android:id="@+id/progress"
+                    style="?android:attr/progressBarStyleLarge"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="正在登录..."
+                    android:textSize="18sp"
+                    android:layout_marginTop="20px"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

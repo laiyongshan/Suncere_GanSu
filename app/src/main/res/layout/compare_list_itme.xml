@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="missingPrefix"
+   >
+
+    <!--    -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="58dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" 
+        >
+
+        <suncere.gansu.androidapp.customview.PollutantNameTextView
+            android:id="@+id/com_PollutantName"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="SO2"
+            android:textColor="#fff"
+            android:textSize="16sp"
+             />
+
+        <TextView
+            android:id="@+id/com_CurrentData"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="301"
+            android:textColor="#ffffff"
+            />
+
+        <TextView
+            android:id="@+id/com_LastData"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="250"
+            android:textColor="#ffffff"
+             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/com_image_down"
+                android:layout_width="12dp"
+                android:layout_height="16dp"
+                android:src="@mipmap/arrow_empty"
+                android:scaleType="fitCenter"
+                 />
+
+          <!--    <TextView
+                android:id="@+id/com_DataChangePercent"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginLeft="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="13.5%"
+                android:textColor="#fff"
+                bind:text="data[i].DataChangePercent" />
+                -->
+                
+                <TextView
+                    android:id="@+id/com_DataChangePercent"
+                    android:layout_width="52dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="4dp"
+                    android:gravity="center"
+                    android:text="13.4%"
+                    android:textColor="#fff"
+                    />
+                
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#66ffffff"
+        />
+
+</LinearLayout>

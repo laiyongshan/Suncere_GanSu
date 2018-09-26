@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical"
+    tools:ignore="missingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#22ffffff"
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+            android:id="@+id/home_title_open_city"
+            android:layout_width="@dimen/top_bar_size"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10px"
+                android:src="@mipmap/add_icon" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/home_title_lin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="甘肃空气质量"
+                android:textColor="#fff"
+                android:textSize="42px" />
+
+            <!--
+            <ImageView
+                 android:layout_width="30px"
+                 android:layout_height="wrap_content"
+                 android:src="@mipmap/icon_position"
+                 android:layout_marginLeft="10px"/>
+                 -->
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/home_title_refresh_rela"
+            android:layout_width="120px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/home_title_refresh_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30px"
+                android:src="@mipmap/refresh" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#275cdc"
+
+        >
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/xTablayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/selected_city_iv"
+            android:padding="6dp"
+            android:layout_marginRight="6dp"
+            app:xTabBackgroundColor="#00ffffff"
+            app:xTabDisplayNum="6"
+            app:xTabDividerWidthWidthText="false"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="#fff"
+            app:xTabSelectedTextSize="22sp"
+            app:xTabTextColor="#9ac8fa"
+            app:xTabTextSize="14sp" />
+
+        <ImageView
+            android:id="@+id/selected_city_iv"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_xiala"
+            android:layout_marginRight="12sp"
+
+            />
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/home_refresh_SwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <suncere.gansu.androidapp.customview.VerticalViewPager
+            android:id="@+id/home_lfScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/home_viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <suncere.gansu.androidapp.customview.MyUIPagerControlView
+                        android:id="@+id/home_UIpager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5px"
+                        android:text="城市数据由国控站点计算，数据为实时数据，未做审核"
+                        android:textColor="#fff"
+                        android:textSize="24px" />
+                </RelativeLayout>
+
+                <include layout="@layout/home_chart_layout_1" />
+
+            </LinearLayout>
+        </suncere.gansu.androidapp.customview.VerticalViewPager>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

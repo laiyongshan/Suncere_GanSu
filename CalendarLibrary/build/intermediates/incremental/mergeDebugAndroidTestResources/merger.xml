@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="__tested_artifact__::CalendarLibrary$Generated" generated="true"><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res"/></dataSet><dataSet config="__tested_artifact__::CalendarLibrary" from-dependency="true" generated-set="__tested_artifact__::CalendarLibrary$Generated"><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res"><file name="mcv_text_date_dark" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\color\mcv_text_date_dark.xml" qualifiers="" type="color"/><file name="mcv_text_date_light" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\color\mcv_text_date_light.xml" qualifiers="" type="color"/><file name="mcv_text_week_color" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\color\mcv_text_week_color.xml" qualifiers="" type="color"/><file name="ic_launcher" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\drawable-hdpi-v4\ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\drawable-mdpi-v4\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\drawable-xhdpi-v4\ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\drawable-xxhdpi-v4\ic_launcher.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="mcv_action_next" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\drawable-xxxhdpi-v4\mcv_action_next.png" qualifiers="xxxhdpi-v4" type="drawable"/><file name="mcv_action_previous" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\drawable-xxxhdpi-v4\mcv_action_previous.png" qualifiers="xxxhdpi-v4" type="drawable"/><file name="activity_main" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="main" path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\menu\main.xml" qualifiers="" type="menu"/><file path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\values\values.xml" qualifiers=""><declare-styleable name="MaterialCalendarView"><attr format="reference" name="mcv_dateTextAppearance"/><attr format="reference" name="mcv_weekDayTextAppearance"/><attr format="reference" name="mcv_headerTextAppearance"/><attr format="color" name="mcv_arrowColor"/><attr format="reference" name="mcv_leftArrowMask"/><attr format="reference" name="mcv_rightArrowMask"/><attr format="color" name="mcv_selectionColor"/><attr format="integer" name="mcv_showOtherDates">
+            <flag name="none" value="0"/>
+            <flag name="other_months" value="1"/>
+            <flag name="out_of_range" value="2"/>
+            <flag name="decorated_disabled" value="4"/>
+            <flag name="defaults" value="4"/>
+            <flag name="all" value="7"/>
+        </attr><attr format="boolean" name="mcv_allowClickDaysOutsideCurrentMonth"/><attr format="reference" name="mcv_weekDayLabels"/><attr format="reference" name="mcv_monthLabels"/><attr format="dimension" name="mcv_tileSize">
+            <enum name="match_parent" value="-1"/>
+        </attr><attr format="dimension" name="mcv_tileHeight">
+            <enum name="match_parent" value="-1"/>
+        </attr><attr format="dimension" name="mcv_tileWidth">
+            <enum name="match_parent" value="-1"/>
+        </attr><attr format="enum" name="mcv_firstDayOfWeek">
+            <enum name="sunday" value="1"/>
+            <enum name="monday" value="2"/>
+            <enum name="tuesday" value="3"/>
+            <enum name="wednesday" value="4"/>
+            <enum name="thursday" value="5"/>
+            <enum name="friday" value="6"/>
+            <enum name="saturday" value="7"/>
+        </attr><attr format="enum" name="mcv_calendarMode">
+            <enum name="month" value="0"/>
+            <enum name="week" value="1"/>
+        </attr><attr format="enum" name="mcv_titleAnimationOrientation">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr></declare-styleable><dimen name="activity_horizontal_margin">16dp</dimen><dimen name="activity_vertical_margin">16dp</dimen><dimen name="calendar_size_small">100dp</dimen><dimen name="tile_size_medium">32dp</dimen><dimen name="tile_size_small">16dp</dimen><item name="mcv_pager" type="id"/><string name="action_settings">Settings</string><string name="app_name">TestAPP</string><string name="calendar">Calendar</string><string name="hello_world">Hello world!</string><string name="next">Go to next</string><string name="previous">Go to previous</string><style name="AppBaseTheme" parent="android:Theme.Light">
+        
+    </style><style name="AppTheme" parent="AppBaseTheme">
+        
+    </style><style name="HJOData_CustomTextAppearance" parent="TextAppearance.MaterialCalendarWidget.Date">
+    <item name="android:textColor">@color/mcv_text_date_dark</item>
+</style><style name="TextAppearance.MaterialCalendarWidget.Date" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textSize">14sp</item>
+        
+        <item name="android:textColor">@color/mcv_text_date_light</item>
+    </style><style name="TextAppearance.MaterialCalendarWidget.Header" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textStyle">bold</item>
+    </style><style name="TextAppearance.MaterialCalendarWidget.WeekDay" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/mcv_text_week_color</item>
+    </style></file><file path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\values-sw720dp-land-v13\values-sw720dp-land-v13.xml" qualifiers="sw720dp-land-v13"><dimen name="activity_horizontal_margin">128dp</dimen></file><file path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\values-v11\values-v11.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        
+    </style></file><file path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\intermediates\bundles\debug\res\values-v14\values-v14.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        
+    </style></file></source></dataSet><dataSet config="main$Generated" generated="true"><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\src\androidTest\res"/><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\generated\res\rs\androidTest\debug"/><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\generated\res\resValues\androidTest\debug"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\src\androidTest\res"/><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\generated\res\rs\androidTest\debug"/><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\build\generated\res\resValues\androidTest\debug"/></dataSet><dataSet config="debug$Generated" generated="true"><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\src\androidTestDebug\res"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="E:\other_files\WorkData\New_SVN\APP\AS\Suncere.GanSu.AS.AndroidApp\CalendarLibrary\src\androidTestDebug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="MaterialCalendarView"><attr format="reference" name="mcv_dateTextAppearance"/><attr format="reference" name="mcv_weekDayTextAppearance"/><attr format="reference" name="mcv_headerTextAppearance"/><attr format="color" name="mcv_arrowColor"/><attr format="reference" name="mcv_leftArrowMask"/><attr format="reference" name="mcv_rightArrowMask"/><attr format="color" name="mcv_selectionColor"/><attr format="integer" name="mcv_showOtherDates">
+            <flag name="none" value="0"/>
+            <flag name="other_months" value="1"/>
+            <flag name="out_of_range" value="2"/>
+            <flag name="decorated_disabled" value="4"/>
+            <flag name="defaults" value="4"/>
+            <flag name="all" value="7"/>
+        </attr><attr format="boolean" name="mcv_allowClickDaysOutsideCurrentMonth"/><attr format="reference" name="mcv_weekDayLabels"/><attr format="reference" name="mcv_monthLabels"/><attr format="dimension" name="mcv_tileSize">
+            <enum name="match_parent" value="-1"/>
+        </attr><attr format="dimension" name="mcv_tileHeight">
+            <enum name="match_parent" value="-1"/>
+        </attr><attr format="dimension" name="mcv_tileWidth">
+            <enum name="match_parent" value="-1"/>
+        </attr><attr format="enum" name="mcv_firstDayOfWeek">
+            <enum name="sunday" value="1"/>
+            <enum name="monday" value="2"/>
+            <enum name="tuesday" value="3"/>
+            <enum name="wednesday" value="4"/>
+            <enum name="thursday" value="5"/>
+            <enum name="friday" value="6"/>
+            <enum name="saturday" value="7"/>
+        </attr><attr format="enum" name="mcv_calendarMode">
+            <enum name="month" value="0"/>
+            <enum name="week" value="1"/>
+        </attr><attr format="enum" name="mcv_titleAnimationOrientation">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr></declare-styleable></configuration></mergedItems></merger>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="12dp"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+            <TableRow android:layout_marginBottom="5dp" >
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_rect_aqi1g_pal"
+                    android:visibility="invisible"
+                    />
+
+                <TextView
+                    android:id="@+id/day_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="优良天数:"
+                    android:textColor="#fff"
+                    />
+            </TableRow>
+
+
+            <TableRow android:layout_marginBottom="5dp" >
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_rect_aqi1g_pal" />
+
+                <TextView
+                    android:id="@+id/g1Val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="优:"
+                    android:textColor="#fff"
+                     />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="5dp" >
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_rect_aqi2g_pal" />
+
+                <TextView
+                    android:id="@+id/g2Val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="良:"
+                    android:textColor="#fff"
+                     />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="5dp" >
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_rect_aqi3g_pal" />
+
+                <TextView
+                    android:id="@+id/g3Val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="轻度污染："
+                    android:textColor="#fff"
+                     />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TableRow android:layout_marginBottom="5dp" >
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_rect_aqi1g_pal"
+                    android:visibility="invisible"
+                    />
+
+                <TextView
+                    android:id="@+id/day_excellent_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="优良率为:"
+                    android:textColor="#fff"
+                    />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="5dp" >
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_rect_aqi4g_pal" />
+
+                <TextView
+                    android:id="@+id/g4Val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="中度污染:"
+                    android:textColor="#fff"
+                     />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="5dp" >
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_rect_aqi5g_pal" />
+
+                <TextView
+                    android:id="@+id/g5Val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="重度污染:"
+                    android:textColor="#fff"
+                     />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="5dp" >
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_rect_aqi6g_pal" />
+
+                <TextView
+                    android:id="@+id/g6Val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="严重污染:"
+                    android:textColor="#fff"
+                     />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="城市"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="PM10"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/AQI_ZhiShu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="PM2.5"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="优良天数"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:background="#7fffffff" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/com_swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="74dp"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/compare_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="#33ffffff"
+                    android:dividerHeight="0.5dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    />
+
+
+                <LinearLayout
+                    android:id="@+id/com_emptyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="42dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/nothing_data" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:text="暂无数据!"
+                        android:textColor="#88E2E2E2"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="6dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:text="数据为剔除沙尘后数据"
+                android:textColor="@color/color_while"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/Stime_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="2018-09-13"
+                    android:textColor="@color/color_while"
+                    android:textSize="12sp"
+                    rv:rv_backgroundColor="#66ffffff"
+                    rv:rv_backgroundPressColor="#00ffffff"
+                    rv:rv_cornerRadius="6dp"
+                    rv:rv_textPressColor="#00ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="  —  "
+                    android:textColor="@color/color_while" />
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/ETime_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="2018-09-13"
+                    android:textColor="@color/color_while"
+                    android:textSize="12sp"
+                    rv:rv_backgroundColor="#66ffffff"
+                    rv:rv_backgroundPressColor="#00ffffff"
+                    rv:rv_cornerRadius="6dp"
+                    rv:rv_textPressColor="#00ffffff" />
+
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/compare_query_tv"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="6dp"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="查询"
+                    android:textColor="@color/color_while"
+                    android:textSize="13sp"
+                    rv:rv_backgroundColor="#66ffffff"
+                    rv:rv_backgroundPressColor="#00ffffff"
+                    rv:rv_cornerRadius="6dp"
+                    rv:rv_textPressColor="#00ffffff" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

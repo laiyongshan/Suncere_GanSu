@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PollutantsView">
+        <attr name="pollutantsTexts" format="string"></attr>
+        <attr name="pollutantsCodes" format="string"></attr>
+        <attr name="selectPollutantTextColor" format="color"></attr>
+        <attr name="selectPollutantTextBackground" format="reference"></attr>
+        <attr name="unSelectPollutantTextColor" format="color"></attr>
+        <attr name="unSelectPollutantTextBackground" format="reference"></attr>
+        <attr name="defaultSelectPollutantIndex" format="integer"></attr>
+        <attr name="pollutantstextSize" format="integer"></attr>
+    </declare-styleable>
+
+
+    <attr name="backgroundColor" format="color|reference|string"/>
+
+    <declare-styleable name="segmentcontrol">
+        <attr name="cornerRadius" format="dimension|reference" />
+        <attr name="colors" format="color|reference" />
+        <attr name="backgroundColor"/>
+        <attr name="texts" format="string|reference" />
+        <attr name="android:textSize" />
+        <attr name="direction" format="enum">
+            <enum name="horizon" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="gaps" format="dimension|reference" />
+        <attr name="horizonGap" format="dimension|reference" />
+        <attr name="verticalGap" format="dimension|reference" />
+        <attr name="selectTextColor" format="color|reference"/>
+        <attr name="unselectTextColor" format="color|reference"/>
+    </declare-styleable>
+
+</resources>

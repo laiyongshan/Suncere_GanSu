@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#33BCBCBC"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/day_count_citySelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/day_count_cityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLines="1"
+                android:text="---"
+                android:textColor="#fff"
+                android:textSize="@dimen/title_size" />
+
+            <ImageView
+                android:id="@+id/citySelectImg"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/icon_position" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#275cdc">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/xTablayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/selected_city_iv"
+            android:padding="6dp"
+            app:xTabBackgroundColor="#00ffffff"
+            app:xTabDisplayNum="6"
+            app:xTabDividerWidthWidthText="false"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="#fff"
+            app:xTabSelectedTextSize="22sp"
+            app:xTabTextColor="#9ac8fa"
+            app:xTabTextSize="14sp" />
+
+        <ImageView
+            android:id="@+id/selected_city_iv"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12sp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_xiala" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/to_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_calenda_count"
+            android:paddingBottom="6dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:text="空气日历"
+            android:textColor="@color/color_while"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/map_select_rela"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+
+            >
+            <!--<suncere.gansu.androidapp.customview.SegmentControl-->
+            <!--android:id="@+id/calendar_daycount_select"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:textSize="15sp"-->
+            <!--bind:backgroundColor="#66F7FBFF"-->
+            <!--bind:texts="空气日历|统计天数"-->
+            <!--bind:colors="#458DE6"-->
+            <!--bind:cornerRadius="8px"-->
+            <!--bind:direction="horizon"-->
+            <!--bind:verticalGap="20px"-->
+            <!--bind:horizonGap="30px"-->
+            <!--/>-->
+
+            <com.flyco.tablayout.SegmentTabLayout
+                android:id="@+id/calendar_daycount_select"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                tl:tl_bar_color="#00ffffff"
+                tl:tl_indicator_color="#ffffff"
+                tl:tl_indicator_corner_radius="6dp"
+                tl:tl_tab_padding="20dp"
+                tl:tl_textSelectColor="#6094C9"
+                tl:tl_textUnselectColor="#ffffff"
+                tl:tl_textsize="12sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/day_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:text="----"
+            android:textColor="@color/color_while"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/updata_time_tv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:text="今天 &#45;&#45;:&#45;&#45; 更新"-->
+            <!--android:textColor="@color/color_while" />-->
+
+
+            <!--<com.flyco.roundview.RoundTextView-->
+            <!--android:id="@+id/no_pass_round_tv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_margin="6dp"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="6dp"-->
+            <!--android:text="空气日历"-->
+            <!--android:textColor="@color/color_while"-->
+            <!--rv:rv_backgroundColor="#44ffffff"-->
+            <!--rv:rv_backgroundPressColor="#383838"-->
+            <!--rv:rv_cornerRadius="6dip"-->
+            <!--rv:rv_strokeColor="@color/color_while"-->
+            <!--rv:rv_strokeWidth="1dp"-->
+            <!--rv:rv_textPressColor="@color/lucency" />-->
+
+
+            <!--</RelativeLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="5dp">
+
+                <!--<android.support.v4.widget.SwipeRefreshLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:visibility="gone"-->
+                <!--&gt;-->
+                <!--<com.github.mikephil.charting.charts.PieChart-->
+                <!--android:id="@+id/pieChart"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:visibility="gone"-->
+                <!--/>-->
+                <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/refresh_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--<com.github.mikephil.charting.charts.BarChart-->
+                    <!--android:id="@+id/barChart"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--/>-->
+
+                    <RelativeLayout
+                        android:id="@+id/chartLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp">
+
+                        <suncere.gansu.androidapp.customview.kjchart.ChartView
+                            android:id="@+id/barChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="240dp"
+                            android:layout_marginLeft="5px"
+                            android:layout_marginTop="6px" />
+
+
+                    </RelativeLayout>
+
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+            </RelativeLayout>
+
+
+            <include layout="@layout/item_count" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="12dp"
+                android:background="#66ffffff" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:gravity="bottom">
+
+
+                <LinearLayout
+                    android:id="@+id/bottom_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/baseYearLinearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/contrastYearLinearLayout"
+                        android:background="@drawable/round_rect_white_pal2"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp">
+
+                        <TextView
+                            android:id="@+id/YearTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:drawablePadding="10dp"
+                            android:drawableRight="@drawable/drop_down_icon"
+                            android:gravity="center"
+                            android:text="----"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                    <suncere.gansu.androidapp.customview.SegmentControl
+                        android:id="@+id/segTimeRange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:textSize="12sp"
+                        bind:backgroundColor="#11111111"
+                        bind:texts="周|月|季|累加"
+                        bind:colors="#ffffff"
+                        bind:cornerRadius="10px"
+                        bind:direction="horizon"
+                        bind:horizonGap="10px"
+                        bind:verticalGap="26px"
+                        />
+
+
+                    <RelativeLayout
+                        android:id="@+id/TimePeriodLinearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/round_rect_white_pal2"
+                        android:orientation="horizontal"
+                        android:paddingLeft="4dp">
+
+                        <TextView
+                            android:id="@+id/timeIndexDDL"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:drawablePadding="6dp"
+                            android:drawableRight="@drawable/drop_down_icon"
+                            android:gravity="center"
+                            android:text="时间周期"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

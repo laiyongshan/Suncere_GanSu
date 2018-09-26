@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <suncere.gansu.androidapp.customview.SegmentControl
+        android:id="@+id/home_TimeRange_CP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8px"
+        android:layout_marginRight="12px"
+        android:layout_marginTop="25px"
+        android:textSize="38px"
+        app:backgroundColor="#004789DE"
+        app:colors="#ffffff"
+        app:cornerRadius="10px"
+        app:direction="horizon"
+        app:horizonGap="40px"
+        app:texts="过去24小时|过去30天|过去12个月"
+        app:verticalGap="24px" />
+
+
+    <suncere.gansu.androidapp.customview.kjchart.ChartView
+        android:id="@+id/home_chart24"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5px"
+        android:layout_marginTop="10px" />
+
+
+    <suncere.gansu.androidapp.customview.PollutantsView
+        android:id="@+id/home_PollutantsView"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:layout_alignParentBottom="true"
+        android:background="#33666666"
+        android:paddingLeft="20px"
+        android:paddingRight="20px"
+        app:pollutantsCodes="99,100,101,102,103,104,105"
+        app:pollutantsTexts="AQI,SO2,NO2,O3_8h,CO,PM10,PM2.5"
+        app:selectPollutantTextBackground="@drawable/pollutant_btn" />
+</RelativeLayout>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+      <import type="suncere.gansu.androidapp.utils.ColorUtils"/>
+        <variable
+            name="homeStationBean"
+            type="suncere.gansu.androidapp.model.entity.HomeStationBean"/>
+    </data>
+
+<RelativeLayout 
+    android:orientation="vertical" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginBottom="30px"
+        android:background="@drawable/home_itme_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="20px">
+
+        <TextView
+            android:id="@+id/home_itme_cityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{homeStationBean.positionName !=null ? homeStationBean.positionName : homeStationBean.cityName}"
+            android:textColor="#fff"
+            android:textSize="38px"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:id="@+id/home_itme_AQI"
+            android:layout_width="wrap_content"
+            android:layout_height="66px"
+            android:text="@{homeStationBean.quality + @string/nullstring +homeStationBean.AQI}"
+            android:background="@{ColorUtils.getBgFromAQI(homeStationBean.AQI)}"
+            android:textColor="@color/color_black"
+            android:gravity="center"
+            android:textSize="30px"
+            android:layout_marginLeft="40px"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:layout_toRightOf="@id/home_itme_cityName"
+            android:layout_centerVertical="true"
+            />
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/into"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25px"/>
+        
+    </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/home_primaryPollutant + homeStationBean.primaryPollutant}"
+            android:textSize="30px"
+            android:textColor="#fff"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="32px"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30px"
+            android:layout_marginBottom="30px">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <suncere.gansu.androidapp.customview.PollutantNameTextView
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="50px"
+                    android:gravity="center"
+                    android:text="PM2.5"
+                    android:textColor="#fff"
+                    android:textSize="32px"
+                    />
+
+                <TextView
+                    android:id="@+id/homestation_itme_pm2_5"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:textColor="#fff"
+                    android:textSize="32px"
+                    android:layout_marginTop="30px"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <suncere.gansu.androidapp.customview.PollutantNameTextView
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="50px"
+                    android:gravity="center"
+                    android:text="PM10"
+                    android:textColor="#fff"
+                    android:textSize="32px"
+                    />
+                <TextView
+                    android:id="@+id/homestation_itme_pm10"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:textColor="#fff"
+                    android:textSize="32px"
+                    android:layout_marginTop="30px"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <suncere.gansu.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="50px"
+                android:gravity="center"
+                android:text="SO2"
+                android:textColor="#fff"
+                android:textSize="32px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{homeStationBean.SO2}"
+                android:textColor="#fff"
+                android:textSize="32px"
+                android:layout_marginTop="30px"
+                />
+
+        </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <suncere.gansu.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="50px"
+                android:gravity="center"
+                android:text="NO2"
+                android:textColor="#fff"
+                android:textSize="32px"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{homeStationBean.NO2}"
+                android:textColor="#fff"
+                android:textSize="32px"
+                android:layout_marginTop="30px"
+                />
+        </LinearLayout>
+            <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <suncere.gansu.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="50px"
+                android:gravity="center"
+                android:text="O3"
+                android:textColor="#fff"
+                android:textSize="32px"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{homeStationBean.o3}"
+                android:textColor="#fff"
+                android:textSize="32px"
+                android:layout_marginTop="30px"
+                />
+        </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <suncere.gansu.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="50px"
+                android:gravity="center"
+                android:text="CO"
+                android:textColor="#fff"
+                android:textSize="32px"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{homeStationBean.CO}"
+                android:textColor="#fff"
+                android:textSize="32px"
+                android:layout_marginTop="30px"
+                />
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+
+</layout>

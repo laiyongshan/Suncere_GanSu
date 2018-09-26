@@ -1,0 +1,247 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/bg"
+    android:orientation="vertical"
+    tools:ignore="missingPrefix"><!-- android:background="@drawable/gansu_bg" -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#275cdc"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/color_while"
+            android:textSize="@dimen/title_size"
+            android:text="预警预报"
+            android:visibility="gone"
+            />
+
+        <suncere.gansu.androidapp.customview.SegmentControl
+            android:id="@+id/forcast_warning_sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="6dp"
+            android:textSize="14sp"
+            bind:backgroundColor="#11111111"
+            bind:colors="#ffffff"
+            bind:cornerRadius="5dip"
+            bind:direction="horizon"
+            bind:horizonGap="12dip"
+            bind:texts="颗粒物预警|颗粒物警报"
+            bind:verticalGap="26px" />
+
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/titleWarning"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:background="#66FFFFFF"
+            android:gravity="center"
+            android:text="颗粒物预警"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/titleAlert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:background="#33999999"
+            android:gravity="center"
+            android:text="颗粒物警报"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="站点"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="时间"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/AQI_ZhiShu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="浓度值"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="上一小时"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="级别"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="#7fffffff" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+             >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fw_List"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:divider="#33ffffff"
+                android:dividerHeight="0.5dp"
+               />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/emptyview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/nothing_data" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="4dp"
+                android:text="暂无数据!"
+                android:textColor="#88E2E2E2"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="#7fffffff" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp" 
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/fw_timePoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="今天 10:00 更新"
+            android:textColor="#ffffff" />
+
+
+        <suncere.gansu.androidapp.customview.SegmentControl
+            android:id="@+id/home_TimeRange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12px"
+            bind:texts="颗粒物预警|颗粒物警报"
+            android:textSize="14sp"
+            bind:backgroundColor="#11111111"
+            bind:colors="#66ffffff"
+            bind:cornerRadius="5dip"
+            bind:direction="horizon"
+            bind:horizonGap="12dip"
+            bind:verticalGap="12dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16px"
+            android:layout_marginBottom="16px"
+            android:visibility="gone"
+            />
+
+
+        <suncere.gansu.androidapp.customview.SegmentControl
+            android:id="@+id/pollutantType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:textSize="14sp"
+            bind:backgroundColor="#11111111"
+            bind:colors="#ffffff"
+            bind:cornerRadius="5dip"
+            bind:direction="horizon"
+            bind:horizonGap="12dip"
+            bind:texts="PM10|PM2.5"
+            bind:verticalGap="26px" />
+    </RelativeLayout>
+
+</LinearLayout>

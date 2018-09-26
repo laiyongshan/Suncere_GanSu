@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:background="#275cdc">
+
+      <!--  <LinearLayout
+            android:id="@+id/map_title_lin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:gravity="center">-->
+            <TextView
+                android:id="@+id/map_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="空气质量实况"
+                android:textColor="#fff"
+                android:textSize="42px"
+                />
+            <!--<ImageView
+                android:layout_width="30px"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_position"
+                android:layout_marginLeft="10px"/>-->
+       <!-- </LinearLayout>-->
+
+        <RelativeLayout
+            android:id="@+id/map_title_refresh_rela"
+            android:layout_width="120px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/map_title_refresh_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/refresh"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30px"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <!-- 高德 -->
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+    </com.amap.api.maps.MapView>
+
+    <LinearLayout
+        android:id="@+id/map_select_rela"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:orientation="horizontal"
+        android:background="#88ffffff"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        >
+            <suncere.gansu.androidapp.customview.SegmentControl
+                android:id="@+id/map_city_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="15sp"
+                bind:backgroundColor="#F7FBFF"
+                bind:texts="城市|国控|区县|省控"
+                bind:colors="#275cdc"
+                bind:cornerRadius="8px"
+                bind:direction="horizon"
+                bind:verticalGap="20px"
+                bind:horizonGap="30px"
+                android:visibility="gone"
+                />
+
+        <com.flyco.tablayout.SegmentTabLayout
+            android:id="@+id/map_segmentTabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center_horizontal"
+            tl:tl_bar_color="#ffffff"
+            tl:tl_indicator_color="#6094C9"
+            tl:tl_indicator_corner_radius="6dp"
+            tl:tl_tab_padding="20dp"
+            tl:tl_textSelectColor="#ffffff"
+            tl:tl_textUnselectColor="#6094C9"
+            tl:tl_textsize="15sp" />
+
+
+    </LinearLayout>
+
+        <suncere.gansu.androidapp.customview.PollutantsView
+            android:id="@+id/map_PollutantsView"
+            android:layout_width="match_parent"
+            android:layout_height="72px"
+            android:background="#66666666"
+            android:paddingLeft="6px"
+            android:paddingRight="6px"
+            bind:pollutantsTexts="AQI,SO2,NO2,O3,CO,PM10,PM2.5"
+            bind:pollutantsCodes="99,100,101,102,103,104,105"
+            bind:selectPollutantTextBackground="@drawable/pollutant_btn"
+            android:layout_alignParentBottom="true"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/map_time_bg"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="120px"
+            android:paddingTop="10px"
+            android:paddingBottom="10px"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:layout_marginRight="30px"
+            >
+
+        <TextView
+            android:id="@+id/map_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="2017年5月16日 15时发布"
+            android:textSize="32px"
+            />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

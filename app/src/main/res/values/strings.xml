@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">甘肃空气质量</string>
+
+    <string name="home_page_time">更新于yyyy-MM-dd HH 时</string>
+    <string name="home_primaryPollutant">首要污染物:</string>
+    <string name="ug">μg/m³</string>
+    <string name="mg">mg/m³</string>
+    <string name="dataType">0</string>
+    <string name="time">更新于---- -- -- --时</string>
+    <string name="nullstring">&#160;&#160;</string>
+
+    <string name="compare_pm10">PM10/同比\nμg/m³</string>
+    <string name="compare_pri">/</string>
+    <string name="HH">HH时报警信息</string>
+
+
+    <!--  极光-->
+    <string name="hello">Hello World, JPush!</string>
+    <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
+    <string name="alias_hint">Alias为大小写字母，数字，下划线</string>
+    <string name="style_hint">style为数字</string>
+    <string name="error_style_empty">style不能为空</string>
+    <string name="error_alias_empty">alias不能为空</string>
+    <string name="error_tag_empty">tag不能为空</string>
+    <string name="error_tag_gs_empty">格式不对</string>
+    <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
+    <string name="logining">程序在后台执行, 请查看日志！</string>
+    <string name="setting_su">设置成功</string>
+
+
+
+
+
+</resources>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical">
+
+    <!-- android:background="@drawable/gansu_bg" -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#33BCBCBC"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/more_calendar_citySelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/more_calendar_cityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLines="1"
+                android:text="---"
+                android:textColor="#fff"
+                android:textSize="@dimen/title_size" />
+
+            <ImageView
+                android:id="@+id/citySelectImg"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/icon_position" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#275cdc">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/xTablayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/selected_city_iv"
+            android:padding="6dp"
+            app:xTabBackgroundColor="#00ffffff"
+            app:xTabDisplayNum="6"
+            app:xTabDividerWidthWidthText="false"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="#fff"
+            app:xTabSelectedTextSize="22sp"
+            app:xTabTextColor="#9ac8fa"
+            app:xTabTextSize="14sp" />
+
+        <ImageView
+            android:id="@+id/selected_city_iv"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12sp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_xiala" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/day_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:text="----"
+            android:textColor="@color/color_while"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:id="@+id/map_select_rela"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+
+            >
+            <!--<suncere.gansu.androidapp.customview.SegmentControl-->
+            <!--android:id="@+id/calendar_daycount_select"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:textSize="15sp"-->
+            <!--bind:backgroundColor="#66F7FBFF"-->
+            <!--bind:texts="空气日历|统计天数"-->
+            <!--bind:colors="#458DE6"-->
+            <!--bind:cornerRadius="8px"-->
+            <!--bind:direction="horizon"-->
+            <!--bind:verticalGap="20px"-->
+            <!--bind:horizonGap="30px"-->
+            <!--/>-->
+
+            <com.flyco.tablayout.SegmentTabLayout
+                android:id="@+id/calendar_daycount_select"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                tl:tl_indicator_corner_radius="6dp"
+                tl:tl_textsize="12sp"
+                tl:tl_bar_color="#00ffffff"
+                tl:tl_textSelectColor="#6094C9"
+                tl:tl_textUnselectColor="#ffffff"
+                tl:tl_indicator_color="#ffffff"
+                tl:tl_tab_padding="20dp"
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/to_dayCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bg_calenda_count"
+            android:paddingBottom="6dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:text="统计天数"
+            android:textColor="@color/color_while"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+
+                <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="6dp"-->
+                <!--&gt;-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/updata_time_tv"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="今天 &#45;&#45;:&#45;&#45; 更新"-->
+                <!--android:textColor="@color/color_while" />-->
+
+
+                <!--<com.flyco.roundview.RoundTextView-->
+                <!--android:id="@+id/countDay_round_tv"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:gravity="center"-->
+                <!--android:padding="6dp"-->
+                <!--android:text="统计天数"-->
+                <!--android:textColor="@color/color_while"-->
+                <!--rv:rv_backgroundColor="#00ffffff"-->
+                <!--rv:rv_backgroundPressColor="#383838"-->
+                <!--rv:rv_cornerRadius="6dip"-->
+                <!--rv:rv_strokeColor="@color/color_while"-->
+                <!--rv:rv_strokeWidth="1dp"-->
+                <!--rv:rv_textPressColor="@color/color_black" />-->
+
+
+                <!--</RelativeLayout>-->
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="306dp">
+
+                    <LinearLayout
+                        android:id="@+id/more_day_lbEmptyView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/nothing_data" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="8dp"
+                            android:text="暂无数据"
+                            android:textColor="#fff"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                    <com.suncere.lib.MaterialCalendarView
+                        android:id="@+id/more_calendarView"
+                        android:layout_width="320dp"
+                        android:layout_height="300dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="#fff"
+                        app:mcv_selectionColor="#00F"
+                        app:mcv_showOtherDates="all" />
+
+
+                </RelativeLayout>
+
+                <include layout="@layout/item_count" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#7fffffff" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp">
+
+                        <LinearLayout
+                            android:id="@+id/more_calendar_year_layout"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/round_rect_white_pal2"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/more_calendar_year"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="5dp"
+                                android:gravity="center"
+                                android:text="2018年"
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:src="@drawable/drop_down_icon" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/more_calendar_month_layout"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/round_rect_white_pal2"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/more_calendar_month"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center"
+                                android:text="1月"
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+
+                                    android:src="@drawable/drop_down_icon" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/more_calendar_PollutantName_layout"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/round_rect_white_pal2"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/more_calendar_PollutantName"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center"
+                                android:text="AQI"
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:src="@drawable/drop_down_icon" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

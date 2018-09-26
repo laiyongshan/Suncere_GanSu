@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="warn_color">#EA2000</color>
+
+    <color name="color_black">#555555</color>
+    <color name="color_while">#ffffff</color>
+
+    <color name="char_text_color">#fff</color>
+
+    <color name="line_color">#44ffffff</color>
+    <color name="luncy">#00ffffff</color>
+
+    <!-- AQI颜色  -->
+    <color name="aqi_1g">#4bec05</color>
+    <color name="aqi_2g">#fff109</color>
+    <color name="aqi_3g">#ffb109</color>
+    <color name="aqi_4g">#ff4909</color>
+   <!-- <color name="aqi_5g">#ff09bc</color>
+    <color name="aqi_6g">#860728</color>
+    <color name="aqi_na">#888888</color>
+-->
+    <color name="mytrans">#00ffffff</color>
+
+    <color name="forecastwarning_title_select">#66FFFFFF</color>
+    <color name="forecastwarning_title_unselect">#66999999</color>
+
+</resources>

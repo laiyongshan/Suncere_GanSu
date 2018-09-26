@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/bg"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#275cdc">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/xTablayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/selected_city_iv"
+            android:padding="6dp"
+            app:xTabBackgroundColor="#00ffffff"
+            app:xTabDisplayNum="6"
+            app:xTabDividerWidthWidthText="false"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="#fff"
+            app:xTabSelectedTextSize="22sp"
+            app:xTabTextColor="#9ac8fa"
+            app:xTabTextSize="14sp" />
+
+        <ImageView
+            android:id="@+id/selected_city_iv"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12sp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_xiala" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp" />
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/compare_segmentTabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        tl:tl_bar_color="#00ffffff"
+        tl:tl_indicator_color="#ffffff"
+        tl:tl_indicator_corner_radius="6dp"
+        tl:tl_tab_padding="20dp"
+        tl:tl_textSelectColor="#6094C9"
+        tl:tl_textUnselectColor="#ffffff"
+        tl:tl_textsize="12sp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/compare_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

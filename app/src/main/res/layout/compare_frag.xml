@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/luncy"
+    android:orientation="vertical"
+    tools:ignore="missingPrefix">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#33BCBCBC"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/citySelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/cityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLines="1"
+                android:text="----"
+                android:textColor="#fff"
+                android:textSize="@dimen/title_size" />
+
+            <ImageView
+                android:id="@+id/citySelectImg"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/icon_position" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="#33BCBCBC"
+        android:visibility="gone">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/xTablayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/selected_city_iv"
+            android:padding="6dp"
+            app:xTabBackgroundColor="#00ffffff"
+            app:xTabDisplayNum="6"
+            app:xTabDividerWidthWidthText="false"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="#fff"
+            app:xTabSelectedTextSize="22sp"
+            app:xTabTextColor="#9ac8fa"
+            app:xTabTextSize="14sp" />
+
+        <ImageView
+            android:id="@+id/selected_city_iv"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12sp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_xiala" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="项目"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="基准时间"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/AQI_ZhiShu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="目标时间"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="增幅"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/line_color" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/com_swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/com_List"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:divider="#33ffffff"
+            android:dividerHeight="0.5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+
+
+        <LinearLayout
+            android:id="@+id/com_emptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/nothing_data" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="4dp"
+                android:text="暂无数据!"
+                android:textColor="#88E2E2E2"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="6dp"
+        android:background="#7fffffff" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="6dp"
+                android:text="基准时间段"
+                android:textColor="@color/color_while"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="12dp"
+                android:text="对比时间段"
+                android:textColor="@color/color_while"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            layout_marginLeft="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/Stime_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="2018-09-13"
+                    android:textColor="@color/color_while"
+                    android:textSize="12sp"
+                    rv:rv_backgroundColor="#66ffffff"
+                    rv:rv_backgroundPressColor="#00ffffff"
+                    rv:rv_cornerRadius="6dp"
+                    rv:rv_textPressColor="#00ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text=" — "
+                    android:textColor="@color/color_while" />
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/ETime_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="2018-09-13"
+                    android:textColor="@color/color_while"
+                    android:textSize="12sp"
+                    rv:rv_backgroundColor="#66ffffff"
+                    rv:rv_backgroundPressColor="#00ffffff"
+                    rv:rv_cornerRadius="6dp"
+                    rv:rv_textPressColor="#00ffffff" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/Pre_Stime_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="2018-09-13"
+                    android:textColor="@color/color_while"
+                    android:textSize="12sp"
+                    bind:rv_backgroundPressColor="#00ffffff"
+                    bind:rv_textPressColor="#00ffffff"
+                    rv:rv_backgroundColor="#66ffffff"
+                    rv:rv_cornerRadius="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text=" — "
+                    android:textColor="@color/color_while" />
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/Pre_Etime_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="2018-09-13"
+                    android:textColor="@color/color_while"
+                    android:textSize="12sp"
+                    bind:rv_backgroundPressColor="#00ffffff"
+                    bind:rv_textPressColor="#00ffffff"
+                    rv:rv_backgroundColor="#66ffffff"
+                    rv:rv_cornerRadius="6dp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+
+            <suncere.gansu.androidapp.customview.SegmentControl
+                android:id="@+id/isRemoveSandDust_segment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:textSize="13sp"
+                bind:backgroundColor="#11111111"
+                bind:colors="#ffffff"
+                bind:cornerRadius="6dp"
+                bind:direction="horizon"
+                bind:horizonGap="8.5dp"
+                bind:texts="不剔除沙尘|剔除沙尘"
+                bind:verticalGap="6.5dp" />
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/compare_query_tv"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="查询"
+                android:textColor="@color/color_while"
+                android:textSize="13sp"
+                rv:rv_backgroundColor="#66ffffff"
+                rv:rv_backgroundPressColor="#00ffffff"
+                rv:rv_cornerRadius="6dp"
+                rv:rv_textPressColor="#00ffffff" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/com_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="更新至---"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp">
+
+                <LinearLayout
+                    android:id="@+id/baseYearLinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toLeftOf="@+id/contrastYearLinearLayout"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/baseYearTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="基准年"
+                        android:textColor="#ffffff"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/drop_down_icon" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contrastYearLinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/contrastYearTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="目标年"
+                        android:textColor="#ffffff"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/drop_down_icon" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="12dp"
+            android:orientation="horizontal"
+            android:paddingRight="12dp"
+            android:visibility="gone"
+            android:weightSum="2.1">
+
+            <suncere.gansu.androidapp.customview.SegmentControl
+                android:id="@+id/segTimeRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="12dp"
+                android:textSize="14sp"
+                bind:backgroundColor="#11111111"
+                bind:colors="#99ffffff"
+                bind:cornerRadius="6dp"
+                bind:direction="horizon"
+                bind:horizonGap="8.5dp"
+                bind:texts="周|月|季|累加"
+                bind:verticalGap="8dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/TimePeriodLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/round_rect_white_pal2"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <TextView
+                    android:id="@+id/TimePeriodTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="时间周期"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/drop_down_icon" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
